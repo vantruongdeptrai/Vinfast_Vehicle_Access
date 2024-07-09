@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>User Page</h1>
+    User
 </body>
 </html>
