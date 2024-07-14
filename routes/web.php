@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[UserController::class,'userDashboard'])->name('user');
+
+Route::post('/infomation',[UserController::class,'postInformation'])->name('infomation');
 
 // Routes cho admin
 Route::middleware(['auth','role:admin'])->group(function(){
