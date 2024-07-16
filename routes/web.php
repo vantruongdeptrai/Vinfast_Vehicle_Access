@@ -21,6 +21,9 @@ Route::get('/',[UserController::class,'userDashboard'])->name('user');
 
 Route::post('/infomation',[UserController::class,'postInformation'])->name('infomation');
 
+Route::post('/license-plate',[UserController::class,'findLicensePlates'])->name('findInfor');
+
+Route::post('/feedback',[UserController::class,'feedback'])->name('feedback');
 // Routes cho admin
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard']);
@@ -41,3 +44,4 @@ Route::post('/login',[AccountController::class,'login'])->name('login');
 
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'register'])->name('register');
+

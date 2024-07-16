@@ -15,8 +15,9 @@ class InformationVehicle extends Model
         'license_plates',
         'type_vehicle_id'
     ];
-    public function typeVehicle(){
-        $this->belongsTo(TypeVehicle::class,'type_vehicle_id','id');
+    public function typeVehicle()
+    {
+        return $this->belongsTo(TypeVehicle::class, 'type_vehicle_id');
     }
     public function senders(){
         $this->belongsToMany(Sender::class);

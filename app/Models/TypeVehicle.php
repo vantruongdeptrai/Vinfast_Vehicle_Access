@@ -10,8 +10,10 @@ class TypeVehicle extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'price_per_hour'
     ];
-    public function informationVehicle(){
-        $this->hasMany(InformationVehicle::class);
+    public function informationVehicles()
+    {
+        return $this->hasMany(InformationVehicle::class, 'type_vehicle_id');
     } 
 }

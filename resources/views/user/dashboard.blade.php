@@ -22,17 +22,25 @@
     <link rel="stylesheet" href="{{asset('theme/user/css/style.css')}}">
     <style>
         .rounded-select {
-            border-radius: 8px; /* Adjust the value as needed */
-            padding: 5px; /* Optional: Add padding for better appearance */
+            border-radius: 8px;
+            /* Adjust the value as needed */
+            padding: 5px;
+            /* Optional: Add padding for better appearance */
         }
+
         .form-control-wrap {
-            margin-bottom: 10px; /* Adjust the spacing between form controls */
+            margin-bottom: 10px;
+            /* Adjust the spacing between form controls */
         }
+
         .form-control {
-            width: 100%; /* Ensure form controls take the full width */
-            padding: 5px; /* Add padding for better appearance */
+            width: 100%;
+            /* Ensure form controls take the full width */
+            padding: 5px;
+            /* Add padding for better appearance */
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -126,152 +134,29 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        @if(session('success'))
+                            <script>
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: '{{ session('success') }}',
+                                });
+                            </script>
+                        @endif
 
-        <div class="site-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h2 class="section-heading"><strong>Features</strong></h2>
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-home"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-gear"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-watch_later"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-verified_user"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-video_library"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="service-1 dark">
-                            <span class="service-1-icon">
-                                <span class="icon-vpn_key"></span>
-                            </span>
-                            <div class="service-1-contents">
-                                <h3>Lorem ipsum dolor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                                <p class="mb-0"><a href="#">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="site-section bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h2 class="section-heading"><strong>Testimonials</strong></h2>
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_1.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Mike Fisher</span>
-                                    <span>Owner, Ford</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_2.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Jean Stanley</span>
-                                    <span>Traveler</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_3.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Katie Rose</span>
-                                    <span>Customer</span>
-                                </div>
-                            </div>
-                        </div>
+                        @if($errors->any())
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Validation Error',
+                                                html: '<ul>' +
+                                                    @foreach ($errors->all() as $error)
+                                                        '<li>{{ $error }}</li>' +
+                                                    @endforeach
+                                    '</ul>'
+                            });
+                                        </script>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -281,14 +166,38 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7 mb-4 mb-md-0">
-                        <h2 class="mb-0 text-white">What are you waiting for?</h2>
-                        <p class="mb-0 opa-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati,
-                            laboriosam.</p>
+                        <h2 class="mb-0 text-white">Search license plates</h2>
                     </div>
                     <div class="col-lg-5 text-md-right">
-                        <a href="#" class="btn btn-primary btn-white">Rent a car now</a>
+                        <form action="{{route('findInfor')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <input type="text" placeholder="XXXXX" class="form-control" name="license_plates">
+                                <button class="btn btn-white mt-3">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                
+            </div>
+        </div>
+        <div class="site-section bg-primary py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-4 mb-md-0">
+                        <h2 class="mb-0 text-white">Feedback</h2>
+                    </div>
+                    <div class="col-lg-5 text-md-right">
+                        <form action="{{route('feedback')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <input type="text" class="form-control" name="feedback">
+                                <button class="btn btn-white mt-3">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
             </div>
         </div>
 
@@ -355,12 +264,9 @@
                     <div class="col-md-12">
                         <div class="border-top pt-5">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                               
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                                template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                2024
                             </p>
                         </div>
                     </div>
