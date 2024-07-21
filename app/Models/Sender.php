@@ -16,7 +16,4 @@ class Sender extends Model
     public function informationVehicles(){
         $this->belongsToMany(InformationVehicle::class);
     }
-    public function feedbacks(){
-        $this->hasMany(FeedBack::class);
-    }
 }

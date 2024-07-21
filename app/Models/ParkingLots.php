@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeedBack extends Model
+class ParkingLots extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'content'
+        'total_spots'
     ];
-    public function sender(){
-        $this->belongsTo(Sender::class);
+    public function senderInformationVehicle(){
+        $this->hasMany(SenderInformationVehicle::class);
     }
 }

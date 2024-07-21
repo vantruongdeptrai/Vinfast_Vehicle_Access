@@ -36,6 +36,7 @@ class AccountController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role === 'admin') {
+            
                 return redirect()->intended('/admin/dashboard');
             } elseif ($user->role === 'basic_admin') {
                 return redirect()->intended('/basic_admin/dashboard');

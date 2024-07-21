@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
+        Schema::create('admin_login_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Sender::class)->constrained();
-            $table->string('content');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feedbacks');
+        Schema::dropIfExists('admin_login_records');
     }
 };

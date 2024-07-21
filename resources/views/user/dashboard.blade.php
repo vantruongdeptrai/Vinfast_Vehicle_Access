@@ -63,7 +63,7 @@
                 <div class="row align-items-center position-relative">
                     <div class="col-3">
                         <div class="site-logo">
-                            <a href="#!"><strong>Vinfast Vehicle Access</strong></a>
+                            <a href="#!"><strong>Quản lí xe ra vào</strong></a>
                         </div>
                     </div>
                 </div>
@@ -78,19 +78,19 @@
                             @csrf
                             <div class="row">
                                 <div class="col-6">
-                                    <h2>Infomation sender</h2>
+                                    <h2>Thông tin người gửi</h2>
                                     <div class="row align-items-center">
                                         <div class="m-3">
                                             <div class="form-control-wrap">
-                                                <label for="">Full name</label>
+                                                <label for="">Họ và tên</label>
                                                 <input type="text" name="full_name" class="form-control">
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="">Phone number</label>
+                                                <label for="">Số điện thoại</label>
                                                 <input type="text" name="phone_number" class="form-control">
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="">Card ID</label>
+                                                <label for="">CCCD / CMND</label>
                                                 <input type="text" name="card_id" class="form-control">
                                             </div>
                                         </div>
@@ -98,15 +98,15 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <h2>Infomation Vehicle</h2>
+                                    <h2>Thông tin xe</h2>
                                     <div class="row align-items-center">
                                         <div class="m-3">
                                             <div class="form-control-wrap">
-                                                <label for="">Vehicle name</label>
+                                                <label for="">Tên xe</label>
                                                 <input type="text" name="vehicle_name" class="form-control">
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="type_vehicle">Type of vehicle</label>
+                                                <label for="type_vehicle">Loại xe</label>
                                                 <select name="type_vehicle_id" id="type_vehicle"
                                                     class="form-select-sm rounded-select">
                                                     @foreach ($type_vehicle as $item)
@@ -115,22 +115,22 @@
                                                 </select>
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="">Brand</label>
+                                                <label for="">Hãng</label>
                                                 <input type="text" name="brand" class="form-control">
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="">Color</label>
+                                                <label for="">Màu</label>
                                                 <input type="text" name="color" class="form-control">
                                             </div>
                                             <div class="form-control-wrap">
-                                                <label for="">License plates</label>
+                                                <label for="">Biển số xe</label>
                                                 <input type="text" name="license_plates" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mt-5 mb-3 mb-md-0 col-md-3">
-                                    <button type="submit" class="btn btn-primary btn-block py-3">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-block py-3">Xác nhận</button>
                                 </div>
                             </div>
                         </form>
