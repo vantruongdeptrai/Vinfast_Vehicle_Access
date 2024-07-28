@@ -10,6 +10,7 @@ class AdminController extends Controller
 {
     public function adminDashboard()
     {
+        
         $sender = Sender::query()->pluck('id');
         
         return view('admin.dashboard',compact('sender'));

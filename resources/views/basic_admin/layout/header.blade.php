@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>Vin Admin Basic</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -25,14 +25,6 @@
     <link href="{{asset('theme/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <style>
-        .footer {
-            position: fixed;
-            width: 70%;
-            bottom: 0;
-           
-        }
-    </style>
     <link href="{{asset('theme/admin/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
@@ -70,7 +62,7 @@
                     </div>
                     <div class="ms-3">
 
-                        <span>Admin</span>
+                        <span>Admin Basic</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">

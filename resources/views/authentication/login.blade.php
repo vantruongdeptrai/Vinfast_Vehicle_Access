@@ -53,7 +53,7 @@
                             </a>
                             <h3>Sign In</h3>
                         </div>
-                        <form action="{{route('login')}}" method="post">
+                        <form action="{{route('login.post')}}" method="post">
                             @csrf
                             <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingText" placeholder="jhondoe" name="username">

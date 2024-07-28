@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+
 use App\Http\Controllers\Controller;
 use App\Models\Account;
-
+use App\Models\AdminLoginRecord;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
-
+use Carbon\Carbon;
 use App\Http\Requests\StoreAccountRequest;
 use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Hash;
+
 class AccountController extends Controller
 {
     /**
@@ -32,22 +34,34 @@ class AccountController extends Controller
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
-
-        if (Auth::attempt($credentials)) {
+            
+        if (Auth::attempt($credentials)) {  
             $user = Auth::user();
             if ($user->role === 'admin') {
-            
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->route('admin-dashboard');
             } elseif ($user->role === 'basic_admin') {
+                //dd(Auth::id());
+                AdminLoginRecord::create([
+                    'admin_id' => Auth::user()->id,
+                    'login_time' => Carbon::now(),
+                ]);
                 return redirect()->intended('/basic_admin/dashboard');
-            } elseif ($user->role === 'user') {
-                return redirect()->intended('/user/dashboard');
             }
         }
         return redirect()->route('login')->withErrors(['error' => 'Invalid username or password.']);
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
+        $loginRecord = AdminLoginRecord::where('admin_id', Auth::id())
+            ->whereNull('logout_time')
+            ->latest()
+            ->first();
+        if ($loginRecord) {
+            $loginRecord->update([
+                'logout_time' => Carbon::now(),
+            ]);
+        }
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

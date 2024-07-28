@@ -32,7 +32,8 @@ Route::post('/feedback',[UserController::class,'feedback'])->name('feedback');
 // Routes cho admin
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('admin-dashboard');
-});
+}); 
+
 Route::prefix('admin')->group(function(){
     Route::prefix('parking-fee')->group(function(){
         Route::get('/',[ParkingFeeController::class,'index'])->name('list-parking-fee');
@@ -59,7 +60,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 });
 
 Route::get('/login',[AccountController::class,'formLogin'])->name('login');
-Route::post('/login',[AccountController::class,'login'])->name('login');
+Route::post('/login',[AccountController::class,'login'])->name('login.post');
 
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'register'])->name('register');

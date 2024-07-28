@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('admin_login_records', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('admin_id');
+            $table->timestamp('login_time')->nullable();
+            $table->timestamp('logout_time')->nullable();
             $table->timestamps();
+            $table->foreign('admin_id')->references('id')->on('accounts')->onDelete('cascade');
         });
     }
 
